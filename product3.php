@@ -226,67 +226,6 @@
         <br>
         <br>
 
-        <div class="row">
-            <?php
-                include 'db.php';
-                $query = $con->query("select * from qk_products where product_type='Food Service Equipment'");
-                while($row = $query->fetch_assoc()){ 
-            ?>
-            <div class="col-sm-12 col-md-6 col-lg-3">
-                <form action=" " class="form-submit">
-                    <div class="cfakeimg">
-                        <a href="productdetails2.php"> <img src="images/<?php echo $row['image'];?>"
-                                class="img-responsive" width="100%"></a>
-                    </div>
-                    <div class="fakedesc">
-                        <p style="font-size:10px; color:#434343;"><?php echo $row['product_name'];?></p>
-                        <span
-                            style="font-size:15px; color:#0d47a1; font-weight:bold;"><?php echo "₱".$row['price'];?></span>
-                        <!--<a href="#" class="float-right btnaddcart">ADD TO CART</a>-->
-                        <button class="btn float-right btnaddcart addItemBtn">ADD TO CART</button>
-                    </div>
-                    <input type="hidden" class="pid" value="<?php echo $row['id']?>">
-                    <input type="hidden" class="pname" value="<?php echo $row['product_name']?>">
-                    <input type="hidden" class="pprice" value="<?php echo $row['price']?>">
-                    <input type="hidden" class="pimage" value="<?php echo $row['image']?>">
-                    <input type="hidden" class="pcode" value="<?php echo $row['product_code']?>">
-                </form>
-            </div>
-            <?php   } ?>
-        </div>
-
-
-        <br>
-        <br>
-
-        <div class="row">
-            <?php
-                include 'db.php';
-                $query = $con->query("select * from qk_products where product_type='Food Service Equipment'");
-                while($row = $query->fetch_assoc()){ 
-            ?>
-            <div class="col-sm-12 col-md-6 col-lg-3">
-                <form action=" " class="form-submit">
-                    <div class="cfakeimg">
-                        <a href="productdetails2.php"> <img src="images/<?php echo $row['image'];?>"
-                                class="img-responsive" width="100%"></a>
-                    </div>
-                    <div class="fakedesc">
-                        <p style="font-size:10px; color:#434343;"><?php echo $row['product_name'];?></p>
-                        <span
-                            style="font-size:15px; color:#0d47a1; font-weight:bold;"><?php echo "₱".$row['price'];?></span>
-                        <!--<a href="#" class="float-right btnaddcart">ADD TO CART</a>-->
-                        <button class="btn float-right btnaddcart addItemBtn">ADD TO CART</button>
-                    </div>
-                    <input type="hidden" class="pid" value="<?php echo $row['id']?>">
-                    <input type="hidden" class="pname" value="<?php echo $row['product_name']?>">
-                    <input type="hidden" class="pprice" value="<?php echo $row['price']?>">
-                    <input type="hidden" class="pimage" value="<?php echo $row['image']?>">
-                    <input type="hidden" class="pcode" value="<?php echo $row['product_code']?>">
-                </form>
-            </div>
-            <?php   } ?>
-        </div>
     </div>
 
 

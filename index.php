@@ -62,7 +62,7 @@
 
     <!--Header-->
     <!--Navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark " style="background-color:#f1f1f1;">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color:#f1f1f1;">
 
         <div class="container">
             <!-- Navbar brand -->
@@ -130,6 +130,7 @@
         </div>
     </nav>
 
+    <br><br><br>
     <!--Picture carousel-->
 
 

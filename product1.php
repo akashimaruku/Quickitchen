@@ -151,7 +151,8 @@
             <div class="col-sm-4 col-md-4 col-lg-4">
 
                 <div class="header">
-                    <a href="product2.php"><span style="color:white; font-weight:bold;">Cooking Equipment</span></a>
+                    <a class="btn bg-transparent" href="#c_equip"><span style="color:white; font-weight:bold;">Cooking
+                            Equipment</span></a>
                 </div>
 
 
@@ -159,14 +160,17 @@
 
             <div class="col-sm-4 col-md-4 col-lg-4">
                 <div class="header">
-                    <a href="product3.php"><span style="color:white; font-weight:bold;">Food service
+                    <a class="btn bg-transparent" href="#fs_equip"><span style="color:white; font-weight:bold;">Food
+                            service
                             Equipment</span></a>
                 </div>
             </div>
 
             <div class="col-sm-4 col-md-4 col-lg-4">
                 <div class="header">
-                    <a href="product4.php"><span style="color:white; font-weight:bold;">Preparation Equipment</span></a>
+                    <a class="btn bg-transparent" href="#p_equip"><span
+                            style="color:white; font-weight:bold;">Preparation
+                            Equipment</span></a>
                 </div>
             </div>
 
@@ -184,7 +188,7 @@
         </div>
         <div class="row">
             <div class="col-sm-6 col-md-6 col-lg-6">
-                <h2>Cooking Equipment</h2>
+                <h2 id="c_equip">Cooking Equipment</h2>
             </div>
             <div class="col-sm-6 col-md-6 col-lg-6 mr-0">
                 <a href="product2.php" class="float-right" style="color:#434343;">View All</a>
@@ -234,7 +238,7 @@
         <div class="row">
 
             <div class="col-sm-6 col-md-6 col-lg-6">
-                <h2>Food Service Equipment</h2>
+                <h2 id="fs_equip">Food Service Equipment</h2>
             </div>
             <div class="col-sm-6 col-md-6 col-lg-6">
                 <a href="product3.php" class="float-right" style="color:#434343;">View All</a>
@@ -289,7 +293,7 @@
 
         <div class="row">
             <div class="col-sm-6 col-md-6 col-lg-6">
-                <h2>Preparation Equipment</h2>
+                <h2 id="p_equip">Preparation Equipment</h2>
             </div>
             <div class="col-sm-6 col-md-6 col-lg-6 mr-0">
                 <a href="product4.php" class="float-right" style="color:#434343;">View All</a>

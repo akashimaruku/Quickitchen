@@ -33,7 +33,7 @@
     <!--Header-->
 
     <!--Navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark " style="background-color:#f1f1f1;">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color:#f1f1f1;">
 
         <div class="container">
             <!-- Navbar brand -->
@@ -95,97 +95,88 @@
 
                 <!-- Links -->
 
-
             </div>
             <!-- Collapsible content -->
         </div>
     </nav>
 
-
+    <br>
+    <br>
 
     <div class="container">
         <!-- Default form register -->
 
         <div class="mx-auto" style="width: 55%;">
 
-            <form class="text-center border border-light p-5" action="#!">
 
-                <p class="h4 mb-4">Sign up</p>
 
-                <div class="form-row mb-4">
-                    <div class="col">
-                        <!-- First name -->
-                        <input type="text" id="defaultRegisterFormFirstName" class="form-control"
-                            placeholder="First name">
-                    </div>
+            <p class="h4 mb-4">Sign up</p>
 
-                    <div class="col">
-                        <!-- Last name -->
-                        <input type="text" id="defaultRegisterFormLastName" class="form-control"
-                            placeholder="Last name">
-                    </div>
+            <div class="form-row mb-4">
+                <div class="col">
+                    <!-- First name -->
+                    <input type="text" class="form-control" placeholder="First name" name="fname" id="fname" required>
+                </div>
+
+                <div class="col">
+                    <!-- Last name -->
+                    <input type="text" class="form-control" placeholder="Last name" name="lname" id="lname" required>
+                </div>
+            </div>
+
+            <!-- E-mail -->
+            <input type="email" class="form-control mb-4" placeholder="E-mail" name="email" id="email" required>
+
+            <div class="form-row mb-4">
+                <div class="col">
+                    <!-- Password -->
+                    <input type="password" class="form-control" placeholder="Password" name="pass" id="pass"
+                        pattern=".{8,15}" required>
+                    <small class="form-text text-muted mb-4">
+                        At least 8 characters and 1 digit
+                    </small>
                 </div>
 
 
-                <!-- E-mail -->
-                <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail">
+                <div class="col">
 
-                <div class="form-row mb-4">
-                    <div class="col">
-                        <!-- Password -->
-                        <input type="password" id="defaultRegisterFormPassword" class="form-control"
-                            placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
-                        <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-                            At least 8 characters and 1 digit
-                        </small>
-                    </div>
+                    <!-- Confirm Password -->
 
+                    <input type="password" class="form-control" placeholder="Confirm Password" name="cpass" id="cpass"
+                        pattern=".{8,15}" required>
+                    <small class="form-text text-muted mb-4">
 
-                    <div class="col">
+                    </small>
 
-                        <!-- Confirm Password -->
-
-                        <input type="password" id="defaultRegisterFormPassword" class="form-control"
-                            placeholder=" Confirm Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
-                        <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-
-
-                        </small>
-
-
-                    </div>
                 </div>
+            </div>
 
+            <!-- Create Account -->
+            <button class="btn  my-4" style="background-color:#0d47a1; color:white;" type="submit" name="btn-save"
+                id="btnsubmit">Create
+                Account</button>
 
-                <!-- Create Account -->
-                <button class="btn  my-4" style="background-color:#0d47a1; color:white;" type="submit">Create
-                    Account</button>
-
-
-
-                <!-- Social register 
+            <div id="error">
+            </div>
+            <!-- Social register 
                         <p>or sign up with:</p>
                         
                         <a href="#" class="mx-2" role="button"><i class="fab fa-facebook-f light-blue-text"></i></a>
                         <a href="#" class="mx-2" role="button"><i class="fab fa-twitter light-blue-text"></i></a>
                         -->
+            <hr>
 
+            <!-- Terms of service -->
+            <p>By creating account,
+                you agree to our
+                <a href="#">Terms & Condition</a>
+                and <a href="#">Privacy Policy</a>
 
-                <hr>
+                <!-- Register -->
+                <p> Already a member?
+                    <a href="login.php">Sign in</a>
+                </p>
 
-                <!-- Terms of service -->
-                <p>By creating account,
-                    you agree to our
-                    <a href="#">Terms & Condition</a>
-                    and <a href="#">Privacy Policy</a>
-
-                    <!-- Register -->
-                    <p> Already a member?
-                        <a href="login.php">Sign in</a>
-                    </p>
-
-
-            </form>
         </div>
     </div>
     <!-- Default form register -->
@@ -216,7 +207,6 @@
 
                     <!-- Links -->
 
-
                     <ul class="list-unstyled text-right ">
                         <li class="list-inline-item ">
                             <a href="contact_us.php" style="font-weight:bold;">Contact Us</a>
@@ -239,8 +229,6 @@
                 </div>
                 <!-- Grid column -->
 
-
-
             </div>
             <!-- Grid row -->
 
@@ -256,14 +244,6 @@
     </footer>
     <!-- Footer -->
 
-
-
-
-
-
-
-
-
     <!-- End your project here-->
 
     <!-- jQuery -->
@@ -275,7 +255,29 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <!-- Your custom scripts (optional) -->
-    <script type="text/javascript"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+
+        $("#btnsubmit").click(function() {
+            var firstname = $("#fname").val();
+            var lastname = $("#lname").val();
+            var email = $("#email").val();
+            var password = $("#pass").val();
+
+            var data = "fname=" + firstname + "&lname=" + lastname + "&email=" + email +
+                "&pass=" + password;
+            $.ajax({
+                url: 'action_signup.php',
+                method: 'post',
+                data: data,
+                success: function(output) {
+                    console.log(output)
+                }
+
+            });
+        });
+    });
+    </script>
 
 </body>
 

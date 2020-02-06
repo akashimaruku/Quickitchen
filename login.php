@@ -34,7 +34,7 @@
 
 
     <!--Navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark " style="background-color:#f1f1f1;">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color:#f1f1f1;">
 
         <div class="container">
             <!-- Navbar brand -->
@@ -103,58 +103,62 @@
 
     </nav>
 
+    <br>
+    <br>
 
     <div class="container">
 
         <!-- Default form login -->
 
+        <br>
+        <br>
+
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
-                <div class="mx-auto" style="width: 55%;">
+                <div class="mx-auto" style="width:65%;">
 
-                    <form class="text-center border border-light p-5" action="#!">
 
-                        <p class="h4 mb-4">Log in</p>
+                    <p class="h4 mb-4">Log in</p>
 
-                        <!-- Email -->
-                        <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
+                    <!-- Email -->
+                    <input type="email" name="email" id="email" class="form-control mb-4" placeholder="E-mail" required>
 
-                        <!-- Password -->
-                        <input type="password" id="defaultLoginFormPassword" class="form-control mb-4"
-                            placeholder="Password">
+                    <!-- Password -->
+                    <input type="password" name="pass" id="pass" class="form-control mb-4" placeholder="Password"
+                        required>
 
-                        <div class="d-flex justify-content-around">
-                            <div>
-                                <!-- Remember me -->
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
-                                    <label class="custom-control-label" for="defaultLoginFormRemember">Remember
-                                        me</label>
-                                </div>
-                            </div>
-                            <div>
-                                <!-- Forgot password -->
-                                <a href="">Forgot password?</a>
+                    <div class="d-flex justify-content-around">
+                        <div>
+                            <!-- Remember me -->
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
+                                <label class="custom-control-label" for="defaultLoginFormRemember">Remember
+                                    me</label>
                             </div>
                         </div>
+                        <div>
+                            <!-- Forgot password -->
+                            <a href="">Forgot password?</a>
+                        </div>
+                    </div>
 
-                        <!-- Sign in button -->
-                        <button class="btn my-4" style="background-color:#0d47a1; color:white;" type="submit">Sign
-                            in</button>
+                    <!-- Sign in button -->
+                    <button class="btn my-4" style="background-color:#0d47a1; color:white;" id="btnsubmit"
+                        type="submit">Sign
+                        in</button>
 
-                        <!-- Register -->
-                        <p>Not a member?
-                            <a href="sign up.php">Create Account</a>
-                        </p>
+                    <!-- Register -->
+                    <p>Not a member?
+                        <a href="sign up.php">Create Account</a>
+                    </p>
 
-                        <!-- Social login 
+                    <!-- Social login 
                            <p>or sign in with:</p>
                            
                            <a href="#" class="mx-2" role="button"><i class="fab fa-facebook-f light-blue-text"></i></a>
                            <a href="#" class="mx-2" role="button"><i class="fab fa-twitter light-blue-text"></i></a>
                            -->
 
-                    </form>
                 </div>
             </div>
         </div>
@@ -230,12 +234,6 @@
 
 
 
-
-
-
-
-
-
     <!-- End your project here-->
 
     <!-- jQuery -->
@@ -247,8 +245,28 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <!-- Your custom scripts (optional) -->
-    <script type="text/javascript"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $("#btnsubmit").click(function() {
+            var data = "email=" + $("#email").val() + "&pass=" + $("#pass").val()
+            $.ajax({
+                type: "POST",
+                url: 'action_login.php',
+                data: data,
+                success: function(output) {
+                    if (output == "success") {
+                        window.location.replace("index.php");
 
+                    } else {
+                        console.log(output);
+                        alert("wrong username or password");
+                    }
+                }
+            });
+
+        });
+    });
+    </script>
 </body>
 
 </html>
