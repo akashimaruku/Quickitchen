@@ -23,6 +23,15 @@ session_start();
     <link rel="stylesheet" href="css/style.css">
 
     <style type="text/css">
+    body {
+        font-family: Avenirbook;
+    }
+
+    @font-face {
+        src: url(fonts/AvenirLTStd-Book.otf);
+        font-family: Avenirbook;
+    }
+
     .dark-blue-text {
         color: #434343;
 

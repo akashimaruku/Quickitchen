@@ -20,6 +20,15 @@
     <link rel="stylesheet" href="css/style.css">
 
     <style type="text/css">
+    body {
+        font-family: Avenirbook;
+    }
+
+    @font-face {
+        src: url(fonts/AvenirLTStd-Book.otf);
+        font-family: Avenirbook;
+    }
+
     .map-container-6 {
         overflow: hidden;
         padding-bottom: 56.25%;
