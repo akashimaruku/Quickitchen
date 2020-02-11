@@ -109,15 +109,18 @@
         </div>
     </nav>
 
-    <br>
-    <br>
 
     <div class="container">
         <!-- Default form register -->
 
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+
         <div class="mx-auto" style="width: 55%;">
-
-
 
             <p class="h4 mb-4">Sign up</p>
 
