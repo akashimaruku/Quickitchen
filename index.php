@@ -154,13 +154,13 @@
 
                 <div class="carousel-item active">
 
-                    <img class="d-block w-100 " src="images/home banner.jpg" alt="First slide">
+                    <img class="d-block w-100 " src="images/Qkcoverpage.png" alt="First slide">
 
                 </div>
 
                 <div class="carousel-item">
 
-                    <img class="d-block w-100" src="images/home banner.jpg" alt="Second slide">
+                    <img class="d-block w-100" src="images/Qkcoverpage.png" alt="Second slide">
 
                 </div>
 
