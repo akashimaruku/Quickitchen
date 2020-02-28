@@ -275,7 +275,7 @@
                             <form id='myform' method='POST' action='#'>
                                 <input type='button' value='-' class='qtyminus' field='quantity' />
                                 <input type='text' name='quantity' value='0' class='qty' />
-                                <input type='button' value='+' class='qtyplus' field='quantity' />
+                                <input type='button' value='+'  class='qtyplus' field='quantity' />
                             </form>
                             <br>
 

@@ -242,7 +242,7 @@ session_start();
                                 </td>
                                 <td>₱<?php echo number_format($row['price'],2); ?></td>
                                 <input type="hidden" class="pprice" value="<?php echo $row['price'];?>">
-                                <td><input type="number" class="form-control itemQty" value="<?php echo $row['qty']; ?>"
+                                <td><input type="number" class="form-control itemQty" min="1" max="99" value="<?php echo $row['qty']; ?>"
                                         style="width:70px;"></td>
                                 <td>₱<?php echo number_format($row['total_price'],2); ?></td>
                                 <td><a href="action.php?remove=<?php echo $row['id']?>" class="text-danger lead"

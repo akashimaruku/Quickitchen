@@ -121,31 +121,41 @@
 
 
         <div class="mx-auto" style="width: 55%;">
-
+           
             <p class="h4 mb-4">Sign up</p>
-
-            <div class="form-row mb-4">
+            
+             
+            <div class="form-row mb-4" >
+               
                 <div class="col">
                     <!-- First name -->
-                    <input type="text" class="form-control" placeholder="First name" name="fname" id="fname" required>
+                    <input type="text" class="form-control" placeholder="First name" name="fname" id="fname" minlength="10" required>
+                      <small class="form-text text-muted mb-4" id="valfname">
+                        Type your First Name
+                    </small>
                 </div>
 
                 <div class="col">
                     <!-- Last name -->
                     <input type="text" class="form-control" placeholder="Last name" name="lname" id="lname" required>
+                       <small class="form-text text-muted mb-4" id="vallname">
+                        Type your Last Name
+                    </small>
                 </div>
             </div>
-
+             
             <!-- E-mail -->
-            <input type="email" class="form-control mb-4" placeholder="E-mail" name="email" id="email" required>
-
+            <input type="email" class="form-control mb-4" placeholder="E-mail" name="email" id="email" required>  
+                  <small class="form-text text-muted mb-4" id="valemail">
+                       Please type your email
+                    </small>
             <div class="form-row mb-4">
                 <div class="col">
                     <!-- Password -->
                     <input type="password" class="form-control" placeholder="Password" name="pass" id="pass"
                         pattern=".{8,15}" required>
-                    <small class="form-text text-muted mb-4">
-                        At least 8 characters and 1 digit
+                    <small class="form-text text-muted mb-4" id="valpass">
+                        At least 8 characters
                     </small>
                 </div>
 
@@ -156,11 +166,12 @@
 
                     <input type="password" class="form-control" placeholder="Confirm Password" name="cpass" id="cpass"
                         pattern=".{8,15}" required>
-                    <small class="form-text text-muted mb-4">
-
+                    <small class="form-text text-muted mb-4" id="valcpass">
+                       Re-enter your password
                     </small>
 
                 </div>
+              
             </div>
 
             <!-- Create Account -->
@@ -188,8 +199,10 @@
                 <p> Already a member?
                     <a href="login.php">Sign in</a>
                 </p>
+             
 
         </div>
+     
     </div>
     <!-- Default form register -->
 
@@ -285,10 +298,108 @@
                 success: function(output) {
                     console.log(output)
                 }
-
+           
             });
         });
+       
+      $("#email").keyup(function(){
+    if(validateEmail()){
+				// if the email is validated
+				// set input email border green
+				$("#email").css("border","2px solid green");
+				// and set label 
+				$("#valemail").html("<p class='text-success'>Valid email</p>");
+			}
+            
+            else{
+				// if the email is not validated
+				// set border red
+				$("#email").css("border","2px solid red");
+				$("#valemail").html("<p class='text-danger'>Please type a valid email</p>");
+			}
+      });
+
+      $("#pass").keyup(function(){
+			// check
+			if(validatePassword()){
+				// set input password border green
+				$("#pass").css("border","2px solid green");
+				//set passMsg 
+				$("#valpass").html("<p class='text-success'>Password is valid</p>");
+			}
+              
+            else{
+					// set input password border red
+				$("#pass").css("border","2px solid red");
+				//set passMsg 
+				$("#valpass").html("<p class='text-danger'>Atleast 8 characters long</p>");
+			}
+		
+		});
+  
+
+        $("#cpass").keyup(function(){
+			// check
+			if(validateconfirmPassword()){
+				// set input password border green
+				$("#cpass").css("border","2px solid green");
+				//set passMsg 
+				$("#valcpass").html("<p class='text-success'>Passwords match</p>");
+			}
+    
+            else{
+					// set input password border red
+				$("#cpass").css("border","2px solid red");
+				//set passMsg 
+				$("#valcpass").html("<p class='text-danger'>Passwords don't match</p>");
+			}
+		
+		});
+
+	
+
+      function validateEmail(){
+		// get value of input email
+		var email=$("#email").val();
+		// use reular expression
+		 var reg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+		 if(reg.test(email)){
+		 	return true;
+   
+		 }else{
+		 	return false;
+		 }
+
+	}
+      function validatePassword(){
+		//get input password value
+		var pass=$("#pass").val();
+		// check it s length
+		if(pass.length > 7){
+			return true;
+		}
+        else{
+			return false;
+		}
+
+	}
+     function validateconfirmPassword(){
+        
+		if($('#cpass').val() == $('#pass').val()){
+			return true;
+		}
+        else{
+			return false;
+		}
+	}
+
+
     });
+
+ 
+
+   
+
     </script>
 
 </body>

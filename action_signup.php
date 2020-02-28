@@ -12,6 +12,7 @@ if(!$row['email']){
 $sql = mysqli_query($con,"INSERT INTO user(`firstname`, `lastname`, `email`, `password`) VALUES ( '$firstname', '$lastname', '$user_email', '$user_password')");
 if($sql){
     echo "registered";
+    header("Location: index.php");
 }else{
     echo "error";
 }

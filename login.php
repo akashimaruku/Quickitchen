@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -134,6 +137,8 @@
 
                     <p class="h4 mb-4">Log in</p>
 
+                   
+
                     <!-- Email -->
                     <input type="email" name="email" id="email" class="form-control mb-4" placeholder="E-mail" required>
 
@@ -181,7 +186,7 @@
 
 
     <!-- Footer -->
-    <footer class="page-footer font-small primary-color-dark pt-4 mt-4">
+    <footer class="page-footer  font-small primary-color-dark pt-4 mt-4">
 
         <!-- Footer Links -->
         <div class="container text-center text-md-left">
