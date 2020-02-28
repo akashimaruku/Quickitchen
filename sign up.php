@@ -131,7 +131,7 @@
                     <!-- First name -->
                     <input type="text" class="form-control" placeholder="First name" name="fname" id="fname" minlength="10" required>
                       <small class="form-text text-muted mb-4" id="valfname">
-                        Type your First Name
+                        Please type your first name
                     </small>
                 </div>
 
@@ -139,7 +139,7 @@
                     <!-- Last name -->
                     <input type="text" class="form-control" placeholder="Last name" name="lname" id="lname" required>
                        <small class="form-text text-muted mb-4" id="vallname">
-                        Type your Last Name
+                        Please type your last name
                     </small>
                 </div>
             </div>
@@ -303,7 +303,8 @@
         });
        
       $("#email").keyup(function(){
-    if(validateEmail()){
+            
+            if(validateEmail()){
 				// if the email is validated
 				// set input email border green
 				$("#email").css("border","2px solid green");
@@ -319,29 +320,55 @@
 			}
       });
 
+            $("#fname").on("keyup", function() {
+             
+             if ( $(this).val().match('^[a-zA-Z]{3,20}$') ) {
+
+                 $("#fname").css("border","2px solid green");
+             				// and set label 
+                 $("#valfname").html("<p class='text-success'>First name is valid</p>");
+            } else {
+                    $("#fname").css("border","2px solid red");
+             	  $("#valfname").html("<p class='text-danger'>Please type a valid first name</p>");
+                 }
+             });
+
+            $("#lname").on("keyup", function() {
+             
+             if ( $(this).val().match('^[a-zA-Z]{3,20}$') ) {
+
+                 $("#lname").css("border","2px solid green");
+             				// and set label 
+                 $("#vallname").html("<p class='text-success'>Last name is valid</p>");
+            } else {
+                    $("#lname").css("border","2px solid red");
+             	  $("#vallname").html("<p class='text-danger'>Please type a valid last name</p>");
+                 }
+             });
+
        $('#pass, #cpass').on('keyup', function () {
           
-      if ($('#pass').val() == $('#cpass').val()) {
-  	
-       $("#cpass").css("border","2px solid green");
+           if ($('#pass').val() == $('#cpass').val()) {
+  	     
+              $("#cpass").css("border","2px solid green");
 				//set passMsg 
-		$("#valcpass").html("<p class='text-success'>Password match</p>");
+	          	$("#valcpass").html("<p class='text-success'>Password match</p>");
     
-       } else if ($("#cpass").val() == null) {
+       } 
+           else if ($('#cpass').val().length == 0){
 
               	$("#cpass").css("border","2px solid red");
 				//set passMsg 
-				$("#valcpass").html("<p class='text-danger'>please type your password again</p>");
-         
-         }else {
+				$("#valcpass").html("<p class='text-danger'>Please re-enter your password</p>");
+            }
+             
+             else {
       
               	$("#cpass").css("border","2px solid red");
 				//set passMsg 
 				$("#valcpass").html("<p class='text-danger'>Passwords don't match</p>");
-           
              }
-           
-           });
+         });
 
 
       $("#pass").keyup(function(){
@@ -362,11 +389,6 @@
 		
 		});
   
-
-       
-
-	
-
       function validateEmail(){
 		// get value of input email
 		var email=$("#email").val();
@@ -393,13 +415,9 @@
 
 	}
     
-
-
     });
 
  
-
-   
 
     </script>
 

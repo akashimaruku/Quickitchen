@@ -13,6 +13,7 @@ $sql = mysqli_query($con,"INSERT INTO user(`firstname`, `lastname`, `email`, `pa
 if($sql){
     echo "registered";
     header("Location: index.php");
+    echo "alert('sign up done')";
 }else{
     echo "error";
 }
