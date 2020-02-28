@@ -319,6 +319,31 @@
 			}
       });
 
+       $('#pass, #cpass').on('keyup', function () {
+          
+      if ($('#pass').val() == $('#cpass').val()) {
+  	
+       $("#cpass").css("border","2px solid green");
+				//set passMsg 
+		$("#valcpass").html("<p class='text-success'>Password match</p>");
+    
+       } else if ($("#cpass").val() == null) {
+
+              	$("#cpass").css("border","2px solid red");
+				//set passMsg 
+				$("#valcpass").html("<p class='text-danger'>please type your password again</p>");
+         
+         }else {
+      
+              	$("#cpass").css("border","2px solid red");
+				//set passMsg 
+				$("#valcpass").html("<p class='text-danger'>Passwords don't match</p>");
+           
+             }
+           
+           });
+
+
       $("#pass").keyup(function(){
 			// check
 			if(validatePassword()){
@@ -338,23 +363,7 @@
 		});
   
 
-        $("#cpass").keyup(function(){
-			// check
-			if(validateconfirmPassword()){
-				// set input password border green
-				$("#cpass").css("border","2px solid green");
-				//set passMsg 
-				$("#valcpass").html("<p class='text-success'>Passwords match</p>");
-			}
-    
-            else{
-					// set input password border red
-				$("#cpass").css("border","2px solid red");
-				//set passMsg 
-				$("#valcpass").html("<p class='text-danger'>Passwords don't match</p>");
-			}
-		
-		});
+       
 
 	
 
@@ -383,15 +392,7 @@
 		}
 
 	}
-     function validateconfirmPassword(){
-        
-		if($('#cpass').val() == $('#pass').val()){
-			return true;
-		}
-        else{
-			return false;
-		}
-	}
+    
 
 
     });
