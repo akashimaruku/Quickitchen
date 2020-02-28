@@ -322,7 +322,7 @@
 
             $("#fname").on("keyup", function() {
              
-             if ( $(this).val().match('^[a-zA-Z]{3,20}$') ) {
+             if ( $(this).val().match('^[a-zA-Z]{3,25}$') ) {
 
                  $("#fname").css("border","2px solid green");
              				// and set label 
@@ -335,7 +335,7 @@
 
             $("#lname").on("keyup", function() {
              
-             if ( $(this).val().match('^[a-zA-Z]{3,20}$') ) {
+             if ( $(this).val().match('^[a-zA-Z]{3,25}$') ) {
 
                  $("#lname").css("border","2px solid green");
              				// and set label 
