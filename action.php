@@ -14,7 +14,6 @@ require 'db.php';
     $pqty = 1;
     }
    
-
      $stmt = $con->prepare("select product_code from cart where product_code=?");
      $stmt->bind_param("s",$pcode);
      $stmt->execute();

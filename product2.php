@@ -213,7 +213,8 @@
             <div class="col-sm-12 col-md-6 col-lg-3">
                 <form action=" " class="form-submit">
                     <div class="cfakeimg">
-                        <a href="productdetails.php"> <img src="images/<?php echo $row['image'];?>"
+                        <a href="productdetails.php?id=<?php echo $row['id'];?> &image=<?php echo $row['image'];?> &productname=<?php echo $row['product_name'];?>  
+                        &price=<?php echo $row['price'];?> &description=<?php echo $row['description'];?> "> <img src="images/<?php echo $row['image'];?>"
                                 class="img-responsive" width="100%"></a>
                     </div>
                     <div class="fakedesc">

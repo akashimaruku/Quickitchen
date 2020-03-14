@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +34,6 @@
 
     .dark-blue-text {
         color: #434343;
-
     }
     </style>
 </head>
@@ -265,26 +264,39 @@
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <!-- Your custom scripts (optional) -->
     <script type="text/javascript">
+
     $(document).ready(function() {
+
         $("#btnsubmit").click(function() {
-            var data = "email=" + $("#email").val() + "&pass=" + $("#pass").val()
+            var email = $("#email").val();
+            var password = $("#pass").val();
+            var data = "email=" + email + "&pass=" + password;
+
+
+       if (email!=""  && password!="" ){
+          
             $.ajax({
                 type: "POST",
                 url: 'action_login.php',
                 data: data,
-                success: function(output) {
-                    if (output == "success") {
+                success: function(data) {
+                    if (data === "success") {
                         window.location.replace("index.php");
-
                     } else {
-                        console.log(output);
+                        console.log(data);
                         alert("wrong username or password");
                     }
                 }
             });
+            } 
 
-        });
+            else{
+                    alert("please type your email and/or password!");
+                }
+
+        });      
     });
+    
     </script>
 </body>
 

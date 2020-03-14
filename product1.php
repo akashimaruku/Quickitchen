@@ -217,8 +217,11 @@
             <div class="col-sm-12 col-md-6 col-lg-3">
                 <form action=" " class="form-submit">
                     <div class="cfakeimg">
-                        <a href="productdetails.php"> <img src="images/<?php echo $row['image'];?>"
+                        <a href="productdetails.php?id=<?php echo $row['id'];?> &image=<?php echo $row['image'];?> &productname=<?php echo $row['product_name'];?>  
+                        &price=<?php echo $row['price'];?> &description=<?php echo $row['description'];?> ">
+                         <img src="images/<?php echo $row['image'];?>"
                                 class="img-responsive" width="100%"></a>
+                               
                     </div>
                     <div class="fakedesc">
                         <p style="font-size:10px; color:#434343;"><?php echo $row['product_name'];?></p>
@@ -227,11 +230,11 @@
                         <!--<a href="#" class="float-right btnaddcart">ADD TO CART</a>-->
                         <button class="btn float-right btnaddcart addItemBtn">ADD TO CART</button>
                     </div>
-                    <input type="hidden" class="pid" value="<?php echo $row['id']?>">
-                    <input type="hidden" class="pname" value="<?php echo $row['product_name']?>">
-                    <input type="hidden" class="pprice" value="<?php echo $row['price']?>">
-                    <input type="hidden" class="pimage" value="<?php echo $row['image']?>">
-                    <input type="hidden" class="pcode" value="<?php echo $row['product_code']?>">
+                    <input type="hidden" name="pid" class="pid" value="<?php echo $row['id']?>">
+                    <input type="hidden" name="pname" class="pname" value="<?php echo $row['product_name']?>">
+                    <input type="hidden" name="pprice" class="pprice" value="<?php echo $row['price']?>">
+                    <input type="hidden" name="pimage" class="pimage" value="<?php echo $row['image']?>">
+                    <input type="hidden" name="pcode" class="pcode" value="<?php echo $row['product_code']?>">
                 </form>
             </div>
             <?php   } ?>
@@ -426,11 +429,12 @@
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="js/popper.min.js"></script>
+	<script type="text/javascript" src="wsimg.js"></script>
     <!-- Bootstrap core JavaScript -->
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
-
+    <!--script type="text/javascript" src='https://img1.wsimg.com/tcc/tcc_l.combined.1.0.6.min.js'></script>-->
 
     <!-- Your custom scripts (optional) -->
     <script type="text/javascript">

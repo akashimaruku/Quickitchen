@@ -152,28 +152,28 @@
 
 
                     <!-- Form contact -->
-                    <form class="p-5 black-text  border border-dark">
+                    <form class="p-5 black-text  border border-dark" action="action_contact.php" method="post">
                         <!-- Heading -->
                         <h2 class="mb-5 font-weight-bold text-center">Contact us</h2>
                         <div class="md-form form-sm"> <i class="fa fa-user prefix"></i>
-                            <input type="text" id="form3" class="form-control form-control-sm">
+                            <input type="text" id="form3" name="fullname" class="form-control form-control-sm" required>
                             <label for="form3">Your Name</label>
                         </div>
                         <div class="md-form form-sm"> <i class="fa fa-envelope prefix"></i>
-                            <input type="text" id="form2" class="form-control form-control-sm">
+                            <input type="text" id="form2" name="email" class="form-control form-control-sm" required>
                             <label for="form2">Your Email</label>
                         </div>
                         <div class="md-form form-sm"> <i class="fa fa-tag prefix"></i>
-                            <input type="text" id="form32" class="form-control form-control-sm">
+                            <input type="text" id="form32" name="subject" class="form-control form-control-sm" required> 
                             <label for="form34">Subject</label>
                         </div>
                         <div class="md-form form-sm"> <i class="fa fa-pencil prefix"></i>
-                            <textarea type="text" id="form8" class="md-textarea form-control form-control-sm"
-                                rows="4"></textarea>
+                            <textarea type="text" id="form8" name="message" class="md-textarea form-control form-control-sm"
+                                rows="4" required></textarea>
                             <label for="form8">Your Message</label>
                         </div>
                         <div class="text-center mt-4">
-                            <button class="btn btn-primary">Submit <i class="fa fa-paper-plane-o ml-1"></i></button>
+                            <button class="btn btn-primary" name="submit">Submit <i class="fa fa-paper-plane-o ml-1"></i></button>
                         </div>
                     </form>
                     <!-- Form contact -->

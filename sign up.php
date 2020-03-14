@@ -297,6 +297,7 @@
                 data: data,
                 success: function(output) {
                     console.log(output)
+                    alert('sign up done!')
                 }
            
             });
@@ -396,12 +397,12 @@
 		 var reg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
 		 if(reg.test(email)){
 		 	return true;
-   
 		 }else{
 		 	return false;
 		 }
 
 	}
+    
       function validatePassword(){
 		//get input password value
 		var pass=$("#pass").val();
@@ -413,9 +414,9 @@
 			return false;
 		}
 
-	}
-    
-    });
+	}  
+
+});
 
  
 
