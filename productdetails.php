@@ -244,8 +244,7 @@
 
                 <!--4th box-->
                 <div class="row">
-
-
+                
                     <div class="col">
                         <div class="subimg">
                         </div>
@@ -263,7 +262,7 @@
 
                     <h1><?php echo $_GET['productname'];?></h1>
                     <br>
-                    <h2><?php echo "₱".$_GET['price'];?></h2>
+                    <h2>₱<?php  echo $_GET['price'];?></h2>
 
                 </div>
                 <div style="border: 1px solid #434343;"></div>
