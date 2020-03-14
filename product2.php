@@ -220,7 +220,7 @@
                     <div class="fakedesc">
                         <p style="font-size:10px; color:#434343;"><?php echo $row['product_name'];?></p>
                         <span
-                            style="font-size:15px; color:#0d47a1; font-weight:bold;"><?php echo "₱".$row['price'];?></span>
+                            style="font-size:15px; color:#0d47a1; font-weight:bold;">₱<?php echo number_format($row['price'],2);?></span>
                         <!--<a href="#" class="float-right btnaddcart">ADD TO CART</a>-->
                         <button class="btn float-right btnaddcart addItemBtn">ADD TO CART</button>
                     </div>

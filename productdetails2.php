@@ -183,7 +183,7 @@
                 <span> / </span>
                 <a href="product3.php" style=" color:#434343;">Food Service Equipment</a>
                 <span> / </span>
-                <span style=" color:#434343; font-weight:bold;">Qk Combie Deep Fat Fryer and Griddle</span>
+                <span style=" color:#434343; font-weight:bold;"><?php echo $_GET['productname'];?></span>
             </div>
         </div>
 
@@ -197,7 +197,7 @@
 
 
                 <div class="descimg">
-                    <img src="images/QKproductdesc.jpg">
+                    <img src="images/<?php echo $_GET['image']; ?>">
                 </div>
             </div>
 
@@ -263,9 +263,9 @@
 
                 <div style="color:#434343;">
 
-                    <h1>QK Combi Deep Fat Fryer</h1>
+                    <h1><?php echo $_GET['productname'];?></h1>
                     <br>
-                    <h2>₱99,999</h2>
+                    <h2>₱<?php  echo $_GET['price'];?></h2>
 
                 </div>
                 <div style="border: 1px solid #434343;"></div>
@@ -313,26 +313,9 @@
                 <br>
 
                 <p class="animated fadeIn text-muted text-left text-justify" style="font-size:20px;">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                   <?php echo $_GET['description'];?>
                 </p>
-                <p class="animated fadeIn text-muted text-left text-justify" style="font-size:20px;"> sed do eiusmod
-                    tempor incididunt ut labore et dolore </p>
-                <p class="animated fadeIn text-muted text-left text-justify" style="font-size:20px;"> magna aliqua. Ut
-                    enim ad minim veniam, quis nostrud </p>
-                <p class="animated fadeIn text-muted text-left text-justify" style="font-size:20px;"> exercitation
-                    ullamco laboris nisi ut aliquip ex ea</p>
-                <p class="animated fadeIn text-muted text-left text-justify" style="font-size:20px;"> commodo consequat.
-                    Duis aute irure dolor in </p>
-                <p class="animated fadeIn text-muted text-left text-justify" style="font-size:20px;"> reprehenderit in
-                    voluptate velit esse cillum dolore eu
-                </p>
-                <p class="animated fadeIn text-muted text-left text-justify" style="font-size:20px;"> fugiat nulla
-                    pariatur. Excepteur sint occaecat cupidatat
-                </p>
-                <p class="animated fadeIn text-muted text-left text-justify" style="font-size:20px;"> non proident, sunt
-                    in culpa qui officia deserunt mollit </p>
-                <p class="animated fadeIn text-muted text-left text-justify" style="font-size:20px;"> anim id est
-                    laborum. </p>
+               
 
                 <br>
                 <br>

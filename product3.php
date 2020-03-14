@@ -212,13 +212,14 @@
             <div class="col-sm-12 col-md-6 col-lg-3">
                 <form action=" " class="form-submit">
                     <div class="cfakeimg">
-                        <a href="productdetails2.php"> <img src="images/<?php echo $row['image'];?>"
+                        <a href="productdetails2.php?id=<?php echo $row['id'];?> &image=<?php echo $row['image'];?> &productname=<?php echo $row['product_name'];?>  
+                        &price=<?php echo $row['price'];?> &description=<?php echo $row['description'];?>"> <img src="images/<?php echo $row['image'];?>"
                                 class="img-responsive" width="100%"></a>
                     </div>
                     <div class="fakedesc">
                         <p style="font-size:10px; color:#434343;"><?php echo $row['product_name'];?></p>
                         <span
-                            style="font-size:15px; color:#0d47a1; font-weight:bold;"><?php echo "₱".$row['price'];?></span>
+                            style="font-size:15px; color:#0d47a1; font-weight:bold;">₱<?php echo number_format($row['price'],2);?></span>
                         <!--<a href="#" class="float-right btnaddcart">ADD TO CART</a>-->
                         <button class="btn float-right btnaddcart addItemBtn">ADD TO CART</button>
                     </div>
