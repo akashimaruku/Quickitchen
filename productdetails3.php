@@ -195,7 +195,7 @@
 
 
                 <div class="descimg">
-                    <img src="images/<?php echo $_GET['image']; ?>">
+                    <img src="images/<?php echo $_GET['image']; ?>" style="max-height:700px; height:550px; width:450px; max-width:500px;">
                 </div>
             </div>
 

@@ -196,7 +196,7 @@
 
                 <div class="descimg">
                 
-                   <img src="images/<?php echo $_GET['image']; ?>">
+                   <img src="images/<?php echo $_GET['image']; ?>" style="max-height:700px; height:550px; width:450px; max-width:500px;">
                 </div>
             </div>
 
@@ -262,7 +262,7 @@
 
                     <h1><?php echo $_GET['productname'];?></h1>
                     <br>
-                    <h2>₱<?php  echo $_GET['price'];?></h2>
+                    <h2>₱<?php echo $_GET['price'];?></h2>
 
                 </div>
                 <div style="border: 1px solid #434343;"></div>
@@ -391,13 +391,6 @@
 
     </footer>
     <!-- Footer -->
-
-
-
-
-
-
-
 
 
     <!-- End your project here-->

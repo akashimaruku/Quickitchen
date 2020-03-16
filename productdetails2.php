@@ -197,7 +197,7 @@
 
 
                 <div class="descimg">
-                    <img src="images/<?php echo $_GET['image']; ?>">
+                    <img src="images/<?php echo $_GET['image']; ?>" style="max-height:750px; height:550px; width:450px; max-width:500px;">
                 </div>
             </div>
 
@@ -287,13 +287,10 @@
                                 <br>
                                 <br>
                                 <div style="border: 1px solid #434343;"></div>
-
                 </div>
             </div>
 
         </div>
-
-
 
     </div>
     <!--end of row-->
